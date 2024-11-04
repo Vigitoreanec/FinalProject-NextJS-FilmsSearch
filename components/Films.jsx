@@ -23,29 +23,29 @@ export function Films({ films, isLoading, search, onChangeSearch }) {
 
                     // <Movie key={obj.imdbID} {...obj} />
                     //---------------------
-                    <div className="card">
-                        <div className="movie" key={obj.imdbID}>
+                    <div className={styles.card}>
+                        <div className={styles.movie} key={obj.imdbID}>
 
-                            <img src={obj.Poster} alt={obj.Title} />
-                            <div className="info">
-                                <span className="title">
-                                    <p>
+                            <img className={styles.img} src={obj.Poster} alt={obj.Title} />
+                            <div className={styles.info}>
+                                <span className={styles.title}>
+                                    <p className={styles.p}>
                                         Title: {obj.Title}
                                     </p>
                                 </span>
-                                <span className="year">
-                                    <p>
+                                <span className={styles.year}>
+                                    <p className={styles.p}>
                                         Year: {obj.Year}
                                     </p>
                                 </span>
-                                <span className="type">
-                                    <p>
+                                <span className={styles.type}>
+                                    <p className={styles.p}>
                                         Type: {obj.typeLabel}
                                     </p>
                                 </span>
                             </div>
                         </div>
-                        <button>Просмотр</button>
+                        
                     </div>
                     //-------------------------
                     // <Movie
