@@ -9,7 +9,8 @@ export default function HomePage() {
         [isLoading, setLoading] = useState(true),
         [search, setSearch] = useState(''),
         apikey = "ed6493c6",
-        url = useMemo(() => new URL('https://www.omdbapi.com/?s=top&apikey=' + apikey), [apikey]);
+        textSearch = "top",
+        url = useMemo(() => new URL(`https://www.omdbapi.com/?s=${textSearch}&apikey=` + apikey), [apikey]);
     console.debug(url);
     useEffect(() => {
         async function getData() {

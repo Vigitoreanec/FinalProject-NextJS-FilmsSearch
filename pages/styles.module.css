@@ -9,10 +9,12 @@
 .container{
     background-color: #bebebe;
     max-width: 1200px;
+    min-width: 380px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 .card{
@@ -21,10 +23,10 @@
     flex-direction: column;
     justify-content: flex-start;
     /* background-color: aquamarine; */
-    padding: 2px;
-    margin: 0 25px 40px;
+    /* padding: 2px; */
+    margin: 3px 25px 20px;
     border-radius: 10px;
-    /* min-width: 346px; */
+    min-width: 350px;
     text-align: center;
 }
 .img{
