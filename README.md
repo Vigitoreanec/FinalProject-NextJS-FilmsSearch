@@ -27,8 +27,8 @@ app =>
 Films 
 Movie
 =>
-https://www.omdbapi.com/?s=red&apikey=ed6493c6
+omdbapi.com/?s=red&apikey=ed6493c6
 =>
-https://stackblitz.com/
+stackblitz.com/
 =>
-https://www.omdbapi.com/?i=tt3896198&apikey=ed6493c6
+omdbapi.com/?i=tt3896198&apikey=ed6493c6
