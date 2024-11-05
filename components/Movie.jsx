@@ -12,29 +12,29 @@ export function Movie({ selectedMovie }) {
             <div className={style.movieInfo}>
                 <h2 >{selectedMovie.Title}</h2>
                 <span className={style.movieYear}>
-                    <p >
-                        <b>Year: </b>{selectedMovie.Year}
+                    <p  className="p">
+                        <b className="b">Year: </b>{selectedMovie.Year}
                     </p>
                 </span>
                 <span className={style.movieRuntime}>
-                    <p ><b>Runtime:</b> {selectedMovie.Runtime}</p>
+                    <p  className="p"><b className="b">Runtime:</b> {selectedMovie.Runtime}</p>
                 </span>
                 <span className={style.movieGenre}>
-                    <p ><b>Genre:</b> {selectedMovie.Genre}</p>
+                    <p  className="p"><b className="b">Genre:</b> {selectedMovie.Genre}</p>
                 </span>
                 <span className={style.movieLanguage}>
-                    <p ><b>Language:</b> {selectedMovie.Language}</p>
-                    <p ><b>Country:</b> {selectedMovie.Country}</p>
+                    <p  className="p"><b className="b">Language:</b> {selectedMovie.Language}</p>
+                    <p  className="p"><b className="b">Country:</b> {selectedMovie.Country}</p>
                 </span>
                 <span className={style.movieAwards}>
-                    <p ><b>Awards:</b> {selectedMovie.Awards}</p>
+                    <p  className="p"><b className="b">Awards:</b> {selectedMovie.Awards}</p>
                 </span>
                 <span className={style.movieActors}>
-                    <p ><b>Actors:</b> {selectedMovie.Actors}</p>
+                    <p  className="p"><b className="b">Actors:</b> {selectedMovie.Actors}</p>
                 </span>
                 <span className={style.movieRating}>
-                    <p >
-                        <b>Rating:</b> {selectedMovie.imdbRating}
+                    <p  className="p">
+                        <b className="b">Rating:</b> {selectedMovie.imdbRating}
                     </p>
                 </span>
             </div>
