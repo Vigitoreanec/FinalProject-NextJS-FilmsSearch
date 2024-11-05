@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Skeleton from "./Skeleton";
-// import { Movie } from "./Movie";
+import { Movie } from "./Movie";
 import styles from "../pages/styles.module.css";
 
 export function Films({ films, isLoading, search, onChangeSearch }) {
+    const
+        apikey = "ed6493c6",
+        [selectedMovie, setSelectedMovie] = useState(null);
+
     console.debug(search);
+
+    const movieClick = useCallback(async (id) => {
+        setSelectedMovie(null);
+        try {
+            const url = `https://www.omdbapi.com/?apikey=${apikey}&i=${id}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            if (!response.ok) throw new Error(response.status);
+            setSelectedMovie(data);
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+        
+    }, []);
+
+    // const handleMovieClick = async (id) => {
+    //     try {
+    //         const response = await fetch(
+    //             `https://www.omdbapi.com/?i=${id}&apikey=${key}`
+    //         );
+    //         const data = await response.json();
+    //         setSelectedMovie(data);
+    //     } catch (error) {
+    //         console.error('Ошибка:', error);
+    //     }
+    // };
+
     return <>
         <div>
             <input type="text" placeholder="Поиск" value={search} onInput={onChangeSearch} />
-            <button>Поиск</button>
+
         </div>
         {isLoading ? (
             <div className="skeleton-list">
@@ -23,8 +54,8 @@ export function Films({ films, isLoading, search, onChangeSearch }) {
 
                     // <Movie key={obj.imdbID} {...obj} />
                     //---------------------
-                    <div className={styles.card}>
-                        <div className={styles.movie} key={obj.imdbID}>
+                    <div className={styles.card} key={obj.imdbID} onClick={() => movieClick(obj.imdbID)}>
+                        <div className={styles.movie} >
 
                             <img className={styles.img} src={obj.Poster} alt={obj.Title} />
                             <div className={styles.info}>
@@ -45,7 +76,12 @@ export function Films({ films, isLoading, search, onChangeSearch }) {
                                 </span>
                             </div>
                         </div>
-                        
+
+                        {selectedMovie && (
+                            <Movie selectedMovie={selectedMovie}/>
+                        )
+
+                        }
                     </div>
                     //-------------------------
                     // <Movie
