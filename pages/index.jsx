@@ -9,8 +9,8 @@ export default function HomePage() {
         [isLoading, setLoading] = useState(true),
         [search, setSearch] = useState(''),
         apikey = "ed6493c6",
-        url = useMemo(()=> new URL('https://www.omdbapi.com/?s=top&apikey='+apikey),[apikey]);
-console.debug(url);
+        url = useMemo(() => new URL('https://www.omdbapi.com/?s=top&apikey=' + apikey), [apikey]);
+    console.debug(url);
     useEffect(() => {
         async function getData() {
             const respons = await fetch(url)
