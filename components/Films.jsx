@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useState } from "react";
 import Skeleton from "./Skeleton";
 import { Movie } from "./Movie";
 import styles from "../pages/styles.module.css";
