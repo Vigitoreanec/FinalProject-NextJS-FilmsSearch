@@ -4,28 +4,28 @@ export function Movie({ selectedMovie }) {
     console.debug(selectedMovie, 'selected');
     return <div className="movie-details" key={selectedMovie.id}>
         <h2>{selectedMovie.Title}</h2>
-         {/*<div className="movies">
+         <div className="movies">
 
-            <img src={movie.img} alt={movie.title} />
+            <img src={selectedMovie.img} alt={selectedMovie.title} />
             <div className="info">
                 <span className="title">
                     <p>
-                        Title: {movie.title}
+                        Title: {selectedMovie.Title}
                     </p>
                 </span>
                 <span className="year">
                     <p>
-                        {year}
+                        Year: {selectedMovie.Year}
                     </p>
                 </span>
-                <span className="type">
+                <span className="rating">
                     <p>
-                        {type}
+                        Rating: {selectedMovie.imdbRating}
                     </p>
                 </span>
             </div>
         </div>
-        <button >Закрыть</button> */}
+        <button >Закрыть</button>
     </div>
 
 
